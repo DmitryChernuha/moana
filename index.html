@@ -1,12 +1,154 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <title>Moana. One Circle</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>САГА ДОРХАДАС | Дарк-фэнтези</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=PT+Serif:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
- <h1>Hello, Moana</h1>
-<script src="js/scripts.js"></script>
+
+    <!-- ==================== HERO ==================== -->
+    <section class="hero">
+        <div class="hero-bg"></div>
+        <div class="hero-content">
+            <h1 class="title">САГА ДОРХАДАС</h1>
+            <p class="subtitle">Десять историй о тех, кто охотился на тьму<br>и научился выращивать свет</p>
+            
+            <div class="genre-tags">
+                <span>Дарк-фэнтези</span>
+                <span>Готический ужас</span>
+                <span>10 новелл</span>
+                <span>300 000 слов</span>
+            </div>
+
+            <div class="hero-buttons">
+                <a href="https://t.me/DorhadasBot" class="btn btn-primary">Читать бесплатно первые главы</a>
+                <a href="https://t.me/DorhadasBot" class="btn btn-secondary">Купить сагу</a>
+            </div>
+        </div>
+        <div class="scroll-hint">↓ Прокрутите, чтобы погрузиться</div>
+    </section>
+
+    <!-- ==================== ATMOSPHERE ==================== -->
+    <section class="atmosphere">
+        <div class="quote">
+            <p>«Земля дышит. Под каждой дорогой — что-то спит.<br>Под каждым городом — кто-то помнит.<br>Марвор Дорх из клана Дорхадас давно перестал верить в тишину земли.»</p>
+        </div>
+        <audio id="ambient" loop>
+            <source src="ambient-loop.mp3" type="audio/mpeg">
+        </audio>
+        <button id="sound-btn" class="sound-toggle">🔊 Включить атмосферу</button>
+    </section>
+
+    <!-- ==================== О САГЕ ==================== -->
+    <section class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>О саге</h2>
+                    <p>«Сага Дорхадас» — это 10 самостоятельных, но тесно связанных повестей в жанре тёмного фэнтези и готического ужаса.</p>
+                    <p>Действие происходит в проклятом королевстве, где древняя война оставила землю покрытой пеплом. Только пять легендарных охотников способны противостоять надвигающейся тьме.</p>
+                    <p>Здесь монстры часто бывают жертвами, а охотники — далеко не героями. Каждый выбор имеет цену, а тишина всегда обманчива.</p>
+                    <p>Для любителей Сапковского, Аберкромби, Клайва Баркера и Лавкрафта.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/600x800/1a1a1a/8b0000?text=Марвор" alt="Марвор">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== НОВЕЛЛЫ ==================== -->
+    <section class="novellas">
+        <div class="container">
+            <h2>Новеллы</h2>
+            <div class="novella-grid" id="novella-grid">
+                <!-- Заполняется через JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ОХОТНИКИ ==================== -->
+    <section class="hunters">
+        <div class="container">
+            <h2>Охотники</h2>
+            <div class="hunters-grid" id="hunters-grid">
+                <!-- Заполняется через JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== МИР САГИ ==================== -->
+    <section class="world">
+        <div class="container">
+            <h2>Мир Дорхадас</h2>
+            <div class="stats">
+                <div>10 новелл</div>
+                <div>5 охотников</div>
+                <div>300 000 слов</div>
+                <div>208 видов тварей</div>
+            </div>
+            <div class="map-placeholder">
+                <img src="https://via.placeholder.com/1200x600/0a0a0a/c9a84c?text=КАРТА+МИРА+ДОРХАДАС" alt="Карта мира">
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ПРОМОРОЛИК ==================== -->
+    <section class="promo-video">
+        <div class="container">
+            <h2>Проморолик саги</h2>
+            <div class="video-wrapper">
+                <iframe width="100%" height="600" 
+                    src="https://www.youtube.com/embed/ВАШ_ВИДЕО_ID" 
+                    title="Проморолик САГА ДОРХАДАС" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== ПОКУПКА ==================== -->
+    <section class="purchase">
+        <div class="container">
+            <h2>Приобрести сагу</h2>
+            <div class="pricing-grid">
+                <!-- Заполняется через JS -->
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== LEAD MAGNET ==================== -->
+    <section class="lead-magnet">
+        <div class="container">
+            <h2>Начните читать бесплатно</h2>
+            <p class="lead-text">Первые две главы каждой новеллы доступны бесплатно.<br>Без регистрации и обязательств.</p>
+            <a href="https://t.me/DorhadasBot" class="btn btn-primary large">Получить бесплатные главы в Telegram</a>
+            <a href="#" class="btn btn-secondary">Послушать аудио-отрывки на YouTube</a>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="#">Telegram-канал</a>
+                <a href="#">VK</a>
+                <a href="#">YouTube</a>
+                <a href="#">Instagram</a>
+            </div>
+            <p>© 2026 САГА ДОРХАДАС. Все права защищены.</p>
+            <p>
+                <a href="#">Политика конфиденциальности</a> • 
+                <a href="#">О проекте</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="js/scripts.js"></script>
 </body>
-</html>
+</html>ы
