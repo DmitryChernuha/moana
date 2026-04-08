@@ -57,7 +57,7 @@ h2 {
         rgba(10, 10, 10, 0.22) 38%,
         rgba(10, 10, 10, 0.68) 68%
     ), 
-    url('./assets/images/hero-bg.png') center/cover no-repeat;
+    url('/assets/images/hero-bg.png') center/cover no-repeat;
     z-index: -2;
 }
 
