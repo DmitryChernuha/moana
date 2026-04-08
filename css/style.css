@@ -53,25 +53,26 @@ h2 {
     position: absolute;
     inset: 0;
     background: linear-gradient(
-        rgba(10, 10, 10, 0.45),
-        rgba(10, 10, 10, 0.75) 55%,
-        rgba(10, 10, 10, 0.92) 85%
+        rgba(10, 10, 10, 0.08),
+        rgba(10, 10, 10, 0.22) 38%,
+        rgba(10, 10, 10, 0.68) 68%
     ), 
-    url('https://via.placeholder.com/1920x1080/1a0f0a/8b0000?text=САГА+ДОРХАДАС+HERO') center/cover no-repeat;
+    url('/assets/images/hero-bg.png') center/cover no-repeat;
     z-index: -2;
 }
 
 .hero-overlay {
     position: absolute;
     inset: 0;
-    background: radial-gradient(circle at center, transparent 30%, rgba(10,10,10,0.65) 100%);
+    background: radial-gradient(circle at center, transparent 32%, rgba(10,10,10,0.35) 100%);
     z-index: -1;
 }
 
 .hero-content {
-    max-width: 920px;
+    max-width: 960px;
     padding: 0 20px;
     z-index: 2;
+    margin-top: 15vh;
 }
 
 .title {
@@ -109,43 +110,60 @@ h2 {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* ====================== BUTTONS ====================== */
+/* ====================== КНОПКИ ====================== */
 .btn {
-    display: inline-block;
-    padding: 16px 28px;
-    font-size: 1.12rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 17px 32px;
+    font-size: 1.13rem;
     font-weight: 600;
-    text-align: center;
-    text-decoration: none;
     border-radius: 6px;
     transition: all 0.35s ease;
-    cursor: pointer;
-    border: none;
-    width: 100%;
-    max-width: 100%;
+    min-height: 58px;
+    text-decoration: none;
+    white-space: nowrap;
 }
 
 .btn-primary {
     background: var(--red);
     color: white;
+    min-width: 230px;        /* ← сузили красную кнопку */
 }
 
 .btn-primary:hover {
     background: #a30000;
     transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(139, 0, 0, 0.4);
 }
 
 .btn-secondary {
     background: transparent;
     color: var(--accent);
     border: 2px solid var(--accent);
+    min-width: 230px;        /* ← одинаковая ширина */
 }
 
 .btn-secondary:hover {
     background: var(--accent);
     color: #0a0a0a;
     transform: translateY(-3px);
+}
+
+/* Контейнер кнопок */
+.hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    max-width: 520px;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .hero-buttons {
+        flex-direction: row;
+        justify-content: center;
+    }
 }
 
 /* Hero buttons container */
