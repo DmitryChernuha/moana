@@ -68,7 +68,7 @@ function renderNovellas() {
     
     grid.innerHTML = novellas.map(n => `
         <div class="novella-card">
-            <img src="assets/images/novellas/${n.image}" 
+            <img src="../assets/images/novellas/${n.image}" 
                  alt="Новелла ${n.num}" 
                  loading="lazy">
             <h3>${n.num}. ${n.title}</h3>
@@ -122,7 +122,7 @@ function renderHunters() {
             <div class="hunter-inner">
                 <!-- Лицевая сторона -->
                 <div class="front">
-                    <img src="assets/images/hunters/${h.image}" 
+                    <img src="../assets/images/hunters/${h.image}" 
                          alt="${h.name}" 
                          loading="lazy">
                     <div class="hunter-info">
