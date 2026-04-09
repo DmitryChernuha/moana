@@ -233,6 +233,98 @@ section {
     line-height: 1.75;
 }
 
+/* КАРТОЧКИ НОВЕЛЛ */
+
+.novella-card img {
+    width: 100%;
+    height: 340px;                    /* ← увеличил высоту (было ~280) */
+    object-fit: cover;
+    object-position: center;          /* обрезает по центру, а не сверху */
+    display: block;
+}
+
+.novella-card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.4s;
+}
+
+.novella-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(201, 168, 76, 0.15);
+}
+
+/* ====================== КАРТОЧКИ ОХОТНИКОВ ====================== */
+.hunters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 25px;
+}
+
+.hunter-card {
+    perspective: 1000px;
+    height: 440px;                    /* чуть выше карточка */
+}
+
+.hunter-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+    transform-style: preserve-3d;
+}
+
+.hunter-card:hover .hunter-inner {
+    transform: rotateY(180deg);
+}
+
+.front, .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #1a1a1a;
+    border: 1px solid #333;
+}
+
+.front img {
+    width: 100%;
+    height: 370px;                    /* ← УВЕЛИЧИЛИ высоту */
+    object-fit: cover;
+    object-position: top center;      /* ← Главное изменение! Показываем верх */
+    display: block;
+}
+
+.hunter-info {
+    padding: 18px 15px 15px;
+    text-align: center;
+}
+
+.hunter-info h3 {
+    color: #c9a84c;
+    margin-bottom: 4px;
+}
+
+.back {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    text-align: center;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 1.05rem;
+    line-height: 1.5;
+    color: #d4d0c8;
+}
+
 /* Novellas & Hunters */
 .novella-grid,
 .hunters-grid {
@@ -241,7 +333,7 @@ section {
     gap: 25px;
 }
 
-.novella-card,
+
 .price-card {
     background: #1a1a1a;
     border: 1px solid #333;
@@ -250,7 +342,7 @@ section {
     transition: all 0.4s;
 }
 
-.novella-card:hover,
+
 .price-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(201, 168, 76, 0.15);

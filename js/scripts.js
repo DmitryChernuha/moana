@@ -1,54 +1,139 @@
-// Данные новелл
+// ====================== ДАННЫЕ НОВЕЛЛ ======================
 const novellas = [
-    { num: "I",  title: "Под городом",          tagline: "…кто-то помнит, кем он был" },
-    { num: "II", title: "Река несёт",           tagline: "не только воду. Река несёт намерение" },
-    { num: "III",title: "Семь ночей",           tagline: "Семь грехов. Двери заперты" },
-    { num: "IV", title: "Зверь внутри",         tagline: "не враг. Зверь внутри — вопрос" },
-    { num: "V",  title: "Тринадцатая невеста", tagline: "Двенадцать умерли. Тринадцатая — откажется" },
-    { num: "VI", title: "Карнавал",             tagline: "дарит радость. Карнавал забирает радость" },
-    { num: "VII",title: "Стена",                tagline: "Стоит. За стеной — ничего. Буквально" },
-    { num: "VIII",title: "История клана",       tagline: "— ложь. Правда — под ногами" },
-    { num: "IX", title: "Охотники стали дичью", tagline: "" },
-    { num: "X",  title: "Последняя охота",      tagline: "На самих себя" }
+    { 
+        num: "I", 
+        title: "Под городом", 
+        tagline: "…кто-то помнит, кем он был",
+        image: "novella-01.jpg"
+    },
+    { 
+        num: "II", 
+        title: "Река несёт", 
+        tagline: "не только воду. Река несёт намерение",
+        image: "novella-02.jpg"
+    },
+    { 
+        num: "III", 
+        title: "Семь ночей", 
+        tagline: "Семь грехов. Двери заперты",
+        image: "novella-03.jpg"
+    },
+    { 
+        num: "IV", 
+        title: "Зверь внутри", 
+        tagline: "не враг. Зверь внутри — вопрос",
+        image: "novella-04.jpg"
+    },
+    { 
+        num: "V", 
+        title: "Тринадцатая невеста", 
+        tagline: "Двенадцать умерли. Тринадцатая — откажется",
+        image: "novella-05.jpg"
+    },
+    { 
+        num: "VI", 
+        title: "Карнавал", 
+        tagline: "дарит радость. Карнавал забирает радость",
+        image: "novella-06.jpg"
+    },
+    { 
+        num: "VII", 
+        title: "Стена", 
+        tagline: "Стоит. За стеной — ничего. Буквально",
+        image: "novella-07.jpg"
+    },
+    { 
+        num: "VIII", 
+        title: "История клана", 
+        tagline: "— ложь. Правда — под ногами",
+        image: "novella-08.jpg"
+    },
+    { 
+        num: "IX", 
+        title: "Охотники стали дичью", 
+        tagline: "",
+        image: "novella-09.jpg"
+    },
+    { 
+        num: "X", 
+        title: "Последняя охота", 
+        tagline: "На самих себя",
+        image: "novella-10.jpg"
+    }
 ];
 
-// Данные охотников
-const hunters = [
-    { name: "Марвор", role: "Охотник за Душами", quote: "Я — охотник. Не дипломат. Но каждый монстр был жертвой." },
-    { name: "Сивра",  role: "Призрачный Клинок", quote: "Понять — прежде чем убить. Это — не слабость." },
-    { name: "Кессаг", role: "Железный Щит",      quote: "Мёртвые не разговаривают. Но умирающие — очень разговорчивы." },
-    { name: "Бренног",role: "Человек с дополнениями", quote: "Я — человек. С дополнениями." },
-    { name: "Этайн",  role: "Ведьма Пепла",      quote: "Правда — моё оружие. Даже если она убивает." }
-];
-
-// Заполнение новелл
+// ====================== РЕНДЕР КАРТОЧЕК НОВЕЛЛ ======================
 function renderNovellas() {
     const grid = document.getElementById('novella-grid');
-    grid.innerHTML = novellas.map((n, i) => `
+    
+    grid.innerHTML = novellas.map(n => `
         <div class="novella-card">
-            <img src="https://via.placeholder.com/300x400/1a0f0a/c9a84c?text=Новелла+${n.num}" alt="${n.title}">
+            <img src="assets/images/novellas/${n.image}" 
+                 alt="Новелла ${n.num}" 
+                 loading="lazy">
             <h3>${n.num}. ${n.title}</h3>
             <p class="tagline">${n.tagline}</p>
-            <a href="https://t.me/DorhadasBot" class="btn btn-primary" style="width: 90%; margin: 15px auto; display: block; text-align: center;">Читать начало</a>
+            <a href="https://t.me/DorhadasBot" class="btn btn-primary" style="width: 90%; margin: 15px auto; display: block; text-align: center;">
+                Читать начало
+            </a>
         </div>
     `).join('');
 }
+// ====================== ДАННЫЕ ОХОТНИКОВ ======================
+const hunters = [
+    {
+        name: "Марвор",
+        role: "Охотник за Душами",
+        quote: "Я — охотник. Не дипломат. Но каждый монстр был жертвой.",
+        image: "marvor.jpg"
+    },
+    {
+        name: "Сивра",
+        role: "Призрачный Клинок",
+        quote: "Понять — прежде чем убить. Это — не слабость.",
+        image: "sivra.jpg"
+    },
+    {
+        name: "Кессаг",
+        role: "Железный Щит",
+        quote: "Мёртвые не разговаривают. Но умирающие — очень разговорчивы.",
+        image: "kessag.jpg"
+    },
+    {
+        name: "Бренног",
+        role: "Человек с дополнениями",
+        quote: "Я — человек. С дополнениями.",
+        image: "brennog.jpg"
+    },
+    {
+        name: "Этайн",
+        role: "Ведьма Пепла",
+        quote: "Правда — моё оружие. Даже если она убивает.",
+        image: "etain.jpg"
+    }
+];
 
-// Заполнение охотников
+// ====================== РЕНДЕР КАРТОЧЕК ОХОТНИКОВ ======================
 function renderHunters() {
     const grid = document.getElementById('hunters-grid');
+    
     grid.innerHTML = hunters.map(h => `
         <div class="hunter-card">
             <div class="hunter-inner">
+                <!-- Лицевая сторона -->
                 <div class="front">
-                    <img src="https://via.placeholder.com/300x280/1a1a1a/8b0000?text=${h.name}" alt="${h.name}">
-                    <div style="padding:15px; text-align:center;">
+                    <img src="assets/images/hunters/${h.image}" 
+                         alt="${h.name}" 
+                         loading="lazy">
+                    <div class="hunter-info">
                         <h3>${h.name}</h3>
-                        <p style="color:#c9a84c; font-size:0.95rem;">${h.role}</p>
+                        <p>${h.role}</p>
                     </div>
                 </div>
+                
+                <!-- Обратная сторона -->
                 <div class="back">
-                    <p style="font-style:italic;">«${h.quote}»</p>
+                    <p class="quote">«${h.quote}»</p>
                 </div>
             </div>
         </div>
